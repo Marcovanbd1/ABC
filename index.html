@@ -249,6 +249,13 @@
       letter-spacing: .01em;
     }
 
+    /* Quiet companion link inside footer */
+    .faq-link{
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--fainter);
+    }
+
     @media (max-width: 520px){
       .topline{ justify-content: flex-start; }
       .paper{ border-radius: 16px; }
@@ -506,6 +513,16 @@
       <section class="contact" aria-label="Contact">
         <div class="line">For civic stewardship enquiries:</div>
         <a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a>
+
+        <!-- Replace the URL below with your FAQs page URL -->
+        <div class="faq-link" aria-label="Questions and Answers">
+          <div class="line muted">Questions and Answers</div>
+          <p class="muted" style="margin:6px 0 0 0;">
+            A public companion to this constitution, answering common questions about governance, trust, privacy, and Neighbourhood Briefs.
+            <a href="https://neighbourhoodsignals-faq.netlify.app/" target="_blank" rel="noopener">Read: Neighbourhood Signals, Questions and Answers →</a>
+          </p>
+        </div>
+
         <div class="line muted">Stewarded by Neighbourhood CoLab CIC.</div>
       </section>
 
