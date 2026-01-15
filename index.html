@@ -10,14 +10,14 @@
     :root{
       /* Modern civic charter */
       --bg: #f6f3ee;           /* warm stone */
-      --paper: #fbf9f5;        /* slightly lighter panel, still feels like paper */
-      --text: #141414;         /* near-black charcoal */
+      --paper: #fbf9f5;        /* paper */
+      --text: #141414;
       --muted: rgba(20,20,20,.68);
       --faint: rgba(20,20,20,.10);
       --fainter: rgba(20,20,20,.06);
 
-      /* Muted civic accent, used sparingly */
-      --accent: #2f6f6b;       /* muted teal */
+      /* Muted civic accent */
+      --accent: #2f6f6b;
       --accent-faint: rgba(47,111,107,.12);
 
       --max: 900px;
@@ -35,6 +35,8 @@
 
     * { box-sizing: border-box; }
     html, body { height: 100%; }
+    html{ scroll-behavior: smooth; }
+
     body{
       margin: 0;
       background: radial-gradient(1200px 800px at 20% -10%, rgba(47,111,107,.06), transparent 55%),
@@ -74,20 +76,20 @@
       color: var(--muted);
       margin-top: 2px;
       margin-bottom: 28px;
+      flex-wrap: wrap;
     }
     .topline span{ opacity: .95; }
     .topline a{ font-weight: 600; }
 
-    /* Paper surface, but not a card UI */
+    /* Paper surface */
     .paper{
-      background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.35));
+      background: var(--paper);
       border: 1px solid var(--fainter);
       border-radius: var(--radius);
       padding: clamp(22px, 4.2vw, 46px);
-      box-shadow: 0 18px 70px rgba(0,0,0,.06);
+      box-shadow: 0 12px 48px rgba(0,0,0,.05);
     }
 
-    /* Threshold */
     .threshold{
       padding-top: 8px;
       padding-bottom: 16px;
@@ -155,7 +157,7 @@
 
     .muted{ color: var(--muted); }
 
-    /* Canonical labels, used sparingly */
+    /* Canonical labels */
     .label{
       display: inline-flex;
       align-items: center;
@@ -176,7 +178,6 @@
       opacity: .9;
     }
 
-    /* Lists */
     ul{
       padding-left: 20px;
       margin: 10px 0 18px 0;
@@ -187,7 +188,6 @@
       color: rgba(20,20,20,.92);
     }
 
-    /* “Red lines” list styling */
     .redlines{
       margin-top: 10px;
       padding-left: 0;
@@ -208,16 +208,29 @@
       font-weight: 700;
     }
 
-    /* Anatomy blocks, not carded, just rhythm */
-    .anatomy h3{
-      margin-top: 18px;
-    }
+    .anatomy h3{ margin-top: 18px; }
     .anatomy .kicker{
       font-weight: 700;
       color: rgba(20,20,20,.86);
     }
 
-    /* Closing */
+    .contents{
+      padding-top: 22px;
+      padding-bottom: 6px;
+    }
+    .contents ul{
+      margin-top: 8px;
+      padding-left: 18px;
+    }
+    .contents li{ margin: 8px 0; }
+    .contents a{ font-weight: 650; }
+
+    .backtotop{
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
     .contact{
       margin-top: 34px;
       padding-top: 18px;
@@ -236,14 +249,12 @@
       letter-spacing: .01em;
     }
 
-    /* Small screens */
     @media (max-width: 520px){
       .topline{ justify-content: flex-start; }
       .paper{ border-radius: 16px; }
       .arrow{ font-size: 20px; }
     }
 
-    /* Print-friendly */
     @media print{
       body{ background: #fff; }
       .wrap{ padding: 0; }
@@ -264,34 +275,50 @@
 
     <article class="paper" aria-label="Neighbourhood Signals, Civic Constitution">
       <section class="threshold" aria-label="Preamble">
-        <p>Every place carries pressures long before they become crises.<br />
-        Neighbourhood Signals exists so that places can listen earlier, respond more proportionately, and take civic responsibility for the space where people are still trying to get their bearings.</p>
+        <p>Every neighbourhood carries pressure before systems feel it.<br />
+        Neighbourhood Signals exists so that places can take civic responsibility for listening, and respond earlier, more proportionately, and more humanely.</p>
         <div class="arrow" aria-hidden="true">↓</div>
       </section>
 
       <header id="top" class="section" aria-label="Title and definition">
         <h1>Neighbourhood Signals</h1>
-        <p class="definition">Neighbourhood Signals is civic infrastructure that enables a place to listen, at neighbourhood scale, to patterns of need and pressure that exist before people enter formal systems, using disciplined, privacy-safe signals to produce accountable civic briefs for local stewardship and action.</p>
+        <p class="definition"><strong>Civic infrastructure for neighbourhood listening.</strong><br />
+        A public constitutional object that enables a place to listen, at neighbourhood scale, to patterns of pressure and need, and to publish disciplined Neighbourhood Briefs for accountable local stewardship and action.</p>
       </header>
 
-      <hr class="rule" />
-
-      <section class="section" aria-label="What kind of thing this is">
-        <h2>What kind of thing this is</h2>
-        <p>Neighbourhood Signals is not a product, platform, programme, dataset, or dashboard.<br />
-        It is a public constitutional object, a civic reference that can be cited, shared, trusted, and defended.</p>
-        <p>It exists to give places a legitimate way to listen to what is happening before demand becomes crisis, and to respond earlier, more proportionately, and more humanely.</p>
+      <section class="contents" aria-label="Contents">
+        <p class="muted" style="margin-bottom:10px;"><strong>Contents</strong></p>
+        <ul>
+          <li><a href="#what-kind">What kind of thing this is</a></li>
+          <li><a href="#framework">The Framework</a></li>
+          <li><a href="#anatomy">The Anatomy</a></li>
+          <li><a href="#acts">The Acts</a></li>
+          <li><a href="#value">On Value</a></li>
+          <li><a href="#travel">On Travel</a></li>
+          <li><a href="#founding">The Founding Clause</a></li>
+          <li><a href="#name">On Legitimate Use of the Name</a></li>
+          <li><a href="#resolution">The Stewardship Resolution</a></li>
+        </ul>
       </section>
 
       <hr class="rule" />
 
-      <section class="section" aria-label="The Framework">
+      <section id="what-kind" class="section" aria-label="What kind of thing this is">
+        <h2>What kind of thing this is</h2>
+        <p>Neighbourhood Signals is not a product, platform, programme, dataset, or dashboard.<br />
+        It is a public constitutional object, a civic reference that can be cited, shared, trusted, and defended.</p>
+        <p>It exists to give places a legitimate way to listen to what is happening as pressure forms, and to respond earlier, more proportionately, and more humanely.</p>
+      </section>
+
+      <hr class="rule" />
+
+      <section id="framework" class="section" aria-label="The Framework">
         <div class="label">Canonical</div>
         <h2>The Framework</h2>
 
         <h3>The space before demand</h3>
         <p>The space before demand is the everyday civic terrain in which people are trying to get their bearings before they enter formal systems.</p>
-        <p>It is where confusion, friction, unmet need, and early distress become visible through how people search, ask, hesitate, loop, and withdraw.</p>
+        <p>It is where confusion, friction, unmet need, and early distress become visible through everyday help-seeking and navigation.</p>
         <p>This space exists in every place. It is real. It carries patterns of pressure long before services feel them. Neighbourhood Signals exists to listen to this space.</p>
 
         <h3>What a signal is</h3>
@@ -320,11 +347,19 @@
           <li>Be used for commercial targeting, advertising, or lead generation</li>
         </ol>
         <p class="muted">Anything that violates these red lines is not Neighbourhood Signals.</p>
+
+        <h3>Interpretation and dispute</h3>
+        <p>Neighbourhood Signals is governed as a constitutional object.</p>
+        <p>If there is disagreement about interpretation, publication, or action, the default is caution: publish uncertainties, prefer reversible steps, and protect trust over speed.</p>
+        <p>If there is disagreement about whether something crosses a red line, it is treated as a red line issue and escalated to stewardship. The burden of proof sits with the party proposing expansion.</p>
+        <p>Where trust is at risk, Guardianship may pause publication pending review.</p>
+
+        <div class="backtotop"><a href="#top">Back to top</a></div>
       </section>
 
       <hr class="rule" />
 
-      <section class="section anatomy" aria-label="The Anatomy">
+      <section id="anatomy" class="section anatomy" aria-label="The Anatomy">
         <div class="label">Canonical</div>
         <h2>The Anatomy</h2>
 
@@ -367,11 +402,13 @@
         <p>Someone independent must be able to scrutinise the layer, review compliance with the red lines, and provide public assurance.</p>
 
         <p><strong>If a place cannot name where these functions sit, it does not yet have neighbourhood listening, it has analytics.</strong></p>
+
+        <div class="backtotop"><a href="#top">Back to top</a></div>
       </section>
 
       <hr class="rule" />
 
-      <section class="section" aria-label="The Acts">
+      <section id="acts" class="section" aria-label="The Acts">
         <div class="label">Canonical</div>
         <h2>The Acts</h2>
 
@@ -386,46 +423,70 @@
 
         <p>Briefs may contain only neighbourhood-level pattern descriptions, civic implications, and proportionate recommendations.</p>
         <p>They may never contain individual data, rankings, dashboards, or targeting.</p>
+        <p>Every Brief must include a route for civic challenge and correction.</p>
+        <p>Briefs must distinguish observation from interpretation, and remain contestable by the place they describe.</p>
+
+        <div class="backtotop"><a href="#top">Back to top</a></div>
       </section>
 
       <hr class="rule" />
 
-      <section class="section" aria-label="On Value">
+      <section id="value" class="section" aria-label="On Value">
         <h2>On Value</h2>
         <p>Neighbourhood Signals introduces a civic capacity, the ability of a place to listen to, interpret, and steward the space before demand.</p>
         <p>Its value is understood through what earlier, more proportionate civic action makes possible.</p>
         <p>The worth of neighbourhood listening is determined locally, because the pressures, costs of escalation, and civic response capacity of each place are different.</p>
+
+        <div class="backtotop"><a href="#top">Back to top</a></div>
       </section>
 
       <hr class="rule" />
 
-      <section class="section" aria-label="On Travel">
+      <section id="travel" class="section" aria-label="On Travel">
         <h2>On Travel</h2>
         <p>Neighbourhood Signals travels by civic enablement, not commercial sale.</p>
         <p>Places receive it, steward it, and may enable others to do the same.</p>
         <p>No place may require payment, licensing, or dependency as a condition of adoption.</p>
+
+        <div class="backtotop"><a href="#top">Back to top</a></div>
       </section>
 
       <hr class="rule" />
 
-      <section class="section" aria-label="The Founding Clause">
+      <section id="founding" class="section" aria-label="The Founding Clause">
         <div class="label">Canonical</div>
         <h2>The Founding Clause</h2>
         <p>Neighbourhood Signals originates in a place.</p>
         <p>The first place to steward neighbourhood listening becomes the Founding Steward.</p>
         <p>The Founding Steward does not own Neighbourhood Signals. It holds the first civic trust for its stewardship and may never be charged for its own neighbourhood listening.</p>
+
+        <div class="backtotop"><a href="#top">Back to top</a></div>
       </section>
 
       <hr class="rule" />
 
-      <section class="section" aria-label="On Legitimate Use of the Name">
+      <section class="section" aria-label="Amendment">
+        <h2>Amendment</h2>
+        <p>This constitution may evolve, but it may not be weakened.</p>
+        <p>Amendments must be public, versioned, and accompanied by a plain-language explanation of what changed and why.</p>
+        <p>No amendment may dilute the red lines, introduce surveillance capability, permit targeting, or reduce public legibility.</p>
+        <p>Places may add stricter local clauses. They may not add looser ones.</p>
+
+        <div class="backtotop"><a href="#top">Back to top</a></div>
+      </section>
+
+      <hr class="rule" />
+
+      <section id="name" class="section" aria-label="On Legitimate Use of the Name">
         <h2>On Legitimate Use of the Name</h2>
         <p>A place may only claim the name <em>Neighbourhood Signals</em> if it adopts this constitution, honours the red lines, maintains the full civic anatomy, and issues only lawful Neighbourhood Briefs.</p>
+
+        <div class="backtotop"><a href="#top">Back to top</a></div>
       </section>
 
       <hr class="rule" />
 
-      <section class="section" aria-label="The Stewardship Resolution">
+      <section id="resolution" class="section" aria-label="The Stewardship Resolution">
         <div class="label">Canonical</div>
         <h2>The Stewardship Resolution</h2>
         <p>A place becomes a steward of Neighbourhood Signals through a public Stewardship Resolution.</p>
@@ -438,15 +499,17 @@
           <li>Commit to public legibility through Neighbourhood Briefs</li>
         </ul>
         <p>Without such a resolution, no place may legitimately claim stewardship.</p>
+
+        <div class="backtotop"><a href="#top">Back to top</a></div>
       </section>
 
       <section class="contact" aria-label="Contact">
-  <div class="line">For civic stewardship enquiries:</div>
-  <a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a>
-  <div class="line muted">Stewarded by Neighbourhood CoLab CIC.</div>
-</section>
-</article>
-</main>
+        <div class="line">For civic stewardship enquiries:</div>
+        <a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a>
+        <div class="line muted">Stewarded by Neighbourhood CoLab CIC.</div>
+      </section>
+
+    </article>
+  </main>
 </body>
 </html>
-
